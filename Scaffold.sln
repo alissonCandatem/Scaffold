@@ -1,0 +1,63 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scaffold", "Scaffold\Scaffold.csproj", "{22F98D5F-C66A-4058-8929-2F6C7D019864}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Api", "Api", "{F05784D4-29FA-46E5-B077-17B916161955}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{8EC8CF94-D558-4E46-8A3B-9042EE50BD4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{38858188-979C-4B27-9706-81BF5C25BF4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{ED491DAA-A18F-43E0-9AC3-D8C18E33787D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scaffold.Application", "Scaffold.Application\Scaffold.Application.csproj", "{191C6593-016A-4DB0-8944-3065BB412857}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scaffold.Infrastructure", "Scaffold.Infrastructure\Scaffold.Infrastructure.csproj", "{27CC73A3-DEB3-4A57-A3A0-C4DF8BB515D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mediator", "Mediator", "{E8C902E2-19A5-4AF1-BF54-06470D51C8D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scaffold.Mediator", "Scaffold.Mediator\Scaffold.Mediator.csproj", "{513F6093-82D1-4D01-A319-46D2C9B9E00C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scaffold.Domain", "Scaffold.Domain\Scaffold.Domain.csproj", "{8A3DF047-24FD-41A4-8B22-D9947A614729}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{22F98D5F-C66A-4058-8929-2F6C7D019864}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22F98D5F-C66A-4058-8929-2F6C7D019864}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22F98D5F-C66A-4058-8929-2F6C7D019864}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22F98D5F-C66A-4058-8929-2F6C7D019864}.Release|Any CPU.Build.0 = Release|Any CPU
+		{191C6593-016A-4DB0-8944-3065BB412857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{191C6593-016A-4DB0-8944-3065BB412857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{191C6593-016A-4DB0-8944-3065BB412857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{191C6593-016A-4DB0-8944-3065BB412857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27CC73A3-DEB3-4A57-A3A0-C4DF8BB515D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27CC73A3-DEB3-4A57-A3A0-C4DF8BB515D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27CC73A3-DEB3-4A57-A3A0-C4DF8BB515D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27CC73A3-DEB3-4A57-A3A0-C4DF8BB515D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{513F6093-82D1-4D01-A319-46D2C9B9E00C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{513F6093-82D1-4D01-A319-46D2C9B9E00C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{513F6093-82D1-4D01-A319-46D2C9B9E00C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{513F6093-82D1-4D01-A319-46D2C9B9E00C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A3DF047-24FD-41A4-8B22-D9947A614729}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A3DF047-24FD-41A4-8B22-D9947A614729}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A3DF047-24FD-41A4-8B22-D9947A614729}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A3DF047-24FD-41A4-8B22-D9947A614729}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{22F98D5F-C66A-4058-8929-2F6C7D019864} = {F05784D4-29FA-46E5-B077-17B916161955}
+		{191C6593-016A-4DB0-8944-3065BB412857} = {8EC8CF94-D558-4E46-8A3B-9042EE50BD4E}
+		{27CC73A3-DEB3-4A57-A3A0-C4DF8BB515D0} = {ED491DAA-A18F-43E0-9AC3-D8C18E33787D}
+		{513F6093-82D1-4D01-A319-46D2C9B9E00C} = {E8C902E2-19A5-4AF1-BF54-06470D51C8D6}
+		{8A3DF047-24FD-41A4-8B22-D9947A614729} = {38858188-979C-4B27-9706-81BF5C25BF4F}
+	EndGlobalSection
+EndGlobal
