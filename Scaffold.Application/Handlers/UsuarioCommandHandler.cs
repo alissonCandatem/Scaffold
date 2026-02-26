@@ -35,7 +35,7 @@ namespace Scaffold.Application.Handlers
       if (emailExiste)
       {
         _notification.AddConflict("Email já cadastrado");
-        return ResultNotification.Fail(_notification.Notifications);
+        return ResultNotification.Fail(_notification);
       }
 
       var senhaHash = BCrypt.Net.BCrypt.HashPassword(command.Senha);

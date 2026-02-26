@@ -17,7 +17,7 @@ namespace Scaffold.Mediator.Shared
 
     public static ResultNotification Ok() => new([]);
 
-    public static ResultNotification Fail(IReadOnlyCollection<Notification> notifications) => new(notifications);
+    public static ResultNotification Fail(INotificationContext context) => FromContext(context);
 
     public static ResultNotification FromContext(INotificationContext context)
        => new(context.Notifications);

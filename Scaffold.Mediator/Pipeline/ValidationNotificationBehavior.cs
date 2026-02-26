@@ -31,7 +31,7 @@ namespace Scaffold.Mediator.Pipeline
       }
 
       if (_notification.HasErrors)
-        return ResultNotification.Fail(_notification.Notifications);
+        return ResultNotification.Fail(_notification);
 
       return await next();
     }
