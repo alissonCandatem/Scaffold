@@ -22,6 +22,13 @@ namespace Scaffold.Application
           .AsImplementedInterfaces()
           .WithScopedLifetime());
 
+      //handlers de evento de dominio
+      services.Scan(scan => scan
+        .FromAssemblies(assembly)
+        .AddClasses(classes => classes.AssignableTo(typeof(IDomainEventHandler<>)))
+        .AsImplementedInterfaces()
+        .WithScopedLifetime());
+
       // behaviors por tipo de resultado
       var commandHandlerInterfaces = assembly.GetTypes()
           .Where(t => !t.IsAbstract && !t.IsInterface)

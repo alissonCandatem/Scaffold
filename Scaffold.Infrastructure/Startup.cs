@@ -3,9 +3,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Scaffold.Application.Interfaces;
 using Scaffold.Domain.Interfaces.Usuario;
+using Scaffold.Infrastructure.Outbox;
 using Scaffold.Infrastructure.Repositories;
 using Scaffold.Infrastructure.Services;
 using Scaffold.Mediator;
+using Scaffold.Mediator.Abstractions;
 
 namespace Scaffold.Infrastructure
 {
@@ -20,6 +22,15 @@ namespace Scaffold.Infrastructure
       services.AddScoped<IUnitOfWork, UnitOfWork>();
       services.AddScoped<IUsuarioRepository, UsuarioRepository>();
       services.AddScoped<IJwtService, JwtService>();
+
+      // in-memory
+      services.AddScoped<IEventPublisher, InMemoryEventPublisher>();
+
+      // kafka
+      services.AddScoped<IEventPublisher, KafkaEventPublisher>();
+
+      // worker 
+      services.AddHostedService<OutboxProcessor>();
 
       return services;
     }

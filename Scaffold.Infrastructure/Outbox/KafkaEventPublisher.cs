@@ -1,0 +1,55 @@
+﻿using Confluent.Kafka;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Logging;
+using Scaffold.Domain.Primitives.Interfaces;
+using Scaffold.Mediator.Abstractions;
+using System.Text.Json;
+
+namespace Scaffold.Infrastructure.Outbox
+{
+  public sealed class KafkaEventPublisher : IEventPublisher
+  {
+    private readonly IProducer<string, string> _producer;
+    private readonly ILogger<KafkaEventPublisher> _logger;
+
+    public KafkaEventPublisher(
+      IConfiguration configuration,
+      ILogger<KafkaEventPublisher> logger
+    )
+    {
+      _logger = logger;
+
+      var config = new ProducerConfig
+      {
+        BootstrapServers = configuration["Kafka:BootstrapServers"],
+        Acks = Acks.All, // garante que a mensagem foi recebida
+        EnableIdempotence = true // evita duplicatas
+      };
+
+      _producer = new ProducerBuilder<string, string>(config).Build();
+    }
+
+    public async Task PublishAsync(IDomainEvent domainEvent, CancellationToken cancellationToken = default)
+    {
+      var eventType = domainEvent.GetType().Name;
+      var payload = JsonSerializer.Serialize(domainEvent, domainEvent.GetType());
+
+      var message = new Message<string, string>
+      {
+        Key = domainEvent.EventId.ToString(),
+        Value = payload,
+        Headers = new Headers
+        {
+          { "event-type", System.Text.Encoding.UTF8.GetBytes(eventType) },
+          { "occurred-at", System.Text.Encoding.UTF8.GetBytes(domainEvent.OccurredAt.ToString("O")) }
+        }
+      };
+
+      var topic = eventType.ToLower().Replace("event", "");
+
+      await _producer.ProduceAsync(topic, message, cancellationToken);
+
+      _logger.LogInformation("Evento {EventType} publicado no tópico {Topic}", eventType, topic);
+    }
+  }
+}
